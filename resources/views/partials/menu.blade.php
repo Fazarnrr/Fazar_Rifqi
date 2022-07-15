@@ -3,7 +3,7 @@
     <li class="nav-item ">
       <a href="{{url ('dashboard')}}" class="nav-link "><img src="image/Vector.png" alt=""><span>Dashboard</span></a>
     </li>
-    <li class="nav-item"><a class="nav-link" href="{{url ('timeline')}}"><img src="image/Akar.png" alt=""> <span>Time Line</span></a></li>
+    <li class="nav-item"><a class="nav-link" href="{{url ('index')}}"><img src="image/Akar.png" alt=""> <span>Time Line</span></a></li>
     <li class="nav-item"><a class="nav-link" href="{{url ('list')}}""><img src="image/Line.png" alt=""> <span>List View Order</span></a></li>
     <li class="nav-item"><a class="nav-link" href="{{url ('document')}}"><img src="image/Line.png" alt=""> <span>Upload Document</span></a></li>
     <li class="nav-item"><a class="nav-link" href="{{url ('task')}}"><img src="image/Line.png" alt=""> <span>Task Progress Report</span></a></li>

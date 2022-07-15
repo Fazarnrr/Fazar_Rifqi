@@ -19,6 +19,11 @@ Route::apiResource('upload','\App\Http\Controllers\API\UploadController',[
     "only" => ["store", "index", "edit", "destroy", "update"]    
 ]);
 
+// route project timeline
+Route::apiResource('ProjectTimeline','\App\Http\Controllers\API\ProjectTimelineController',[
+    "only" => ["index", "store", "edit", "update", "destroy"]    
+]);
+
 Route::post('upload/{id}',[UploadController::class,'update'])->name('uploads.update');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

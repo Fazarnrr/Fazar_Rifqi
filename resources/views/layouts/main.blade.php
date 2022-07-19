@@ -29,6 +29,7 @@
 
       <!-- Main Content -->
       <div class="main-content" style="background-color: white">
+      @include('flash-message')
         @yield('content')
       </div>
       

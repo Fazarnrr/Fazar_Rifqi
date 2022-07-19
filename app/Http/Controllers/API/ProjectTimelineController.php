@@ -47,18 +47,18 @@ class ProjectTimelineController extends Controller
                 "nama_institusi" => "required",
                 "nama_project" => "required",
                 "nama_sales" => "required",
-                "project_timeline" => "required",
                 "start_date" => "required",
                 "finish_date" => "required",
-                "sign_to" => "required"
+                "sign_to" => "required",
+                "sign_to_pm" => "required"
             ],[
                 "nama_institusi.required" => "Field tidak boleh kosong",
                 "nama_project.required" => "Field tidak boleh kosong",
                 "nama_sales.required" => "Field tidak boleh kosong",
-                "project_timeline.required" => "Field tidak boleh kosong",
                 "start_date.required" => "Field tidak boleh kosong",
                 "finish_date.required" => "Field tidak boleh kosong",
-                "sign_to.required" => "Field tidak boleh kosong"
+                "sign_to.required" => "Field tidak boleh kosong",
+                "sign_to_pm.required" => "Field tidak boleh kosong"
             ]);
     
             if($validate->fails()) {
@@ -69,10 +69,10 @@ class ProjectTimelineController extends Controller
                 "nama_institusi" => $request->nama_institusi,
                 "nama_project" => $request->nama_project,
                 "nama_sales" => $request->nama_sales,
-                "project_timeline" => $request->project_timeline,
                 "start_date" => $request->start_date,
                 "finish_date" => $request->finish_date,
-                "sign_to" => $request->sign_to
+                "sign_to" => $request->sign_to,
+                "sign_to_pm" => $request->sign_to_pm
             ]);
     
             return response()->json([
@@ -115,7 +115,6 @@ class ProjectTimelineController extends Controller
             "nama_institusi" => "required",
             "nama_project" => "required",
             "nama_sales" => "required",
-            "project_timeline" => "required",
             "start_date" => "required",
             "finish_date" => "required",
             "sign_to" => "required"
@@ -130,7 +129,6 @@ class ProjectTimelineController extends Controller
             "nama_institusi" => $request->nama_institusi,
                 "nama_project" => $request->nama_project,
                 "nama_sales" => $request->nama_sales,
-                "project_timeline" => $request->project_timeline,
                 "start_date" => $request->start_date,
                 "finish_date" => $request->finish_date,
                 "sign_to" => $request->sign_to

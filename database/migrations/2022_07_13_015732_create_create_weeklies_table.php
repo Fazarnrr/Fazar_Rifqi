@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('project_timelines', function (Blueprint $table) {
+        Schema::create('create_weeklies', function (Blueprint $table) {
             $table->id();
-            $table->string("nama_institusi");
-            $table->string("nama_project");
-            $table->string("nama_sales");
-            $table->string("start_date");
-            $table->string("finish_date");
-            $table->string("sign_to");
-            $table->string("sign_to_pm");
+            $table->string('client_name');
+            $table->string('project_name');
+            $table->string('uraian_job');
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->string('status_job');
+            $table->string('note');
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_timelines');
+        Schema::dropIfExists('create_weeklies');
     }
 };

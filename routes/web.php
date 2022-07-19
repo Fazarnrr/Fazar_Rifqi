@@ -23,7 +23,7 @@ use App\Http\Controllers\ListController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
 Route::get('/dashboard',[DashboardController::class,'index'])->name('dasboard');

@@ -16,8 +16,10 @@
                 <th>Nama institusi</th>
                 <th>Nama Projek</th>
                 <th>Nama Sales</th>
-                <th>ProjectTimeline</th>
-                <th>Sign to</th>
+                <th>Start Date</th>
+                <th>Finish Date</th>
+                <th>Sign to Technical</th>
+                <th>Sign to PM</th>
                 
             </tr>
          </thead>
@@ -29,8 +31,10 @@
                     <td>{{ $id->nama_institusi }}</td>
                     <td>{{ $id->nama_project }}</td>
                     <td>{{ $id->nama_sales }}</td>
-                    <td>{{$id->project_timeline}}</td>  
+                    <td>{{$id->start_date}}</td>  
+                    <td>{{$id->finish_date}}</td> 
                     <td>{{ $id->sign_to }}</td>
+                    <td>{{ $id->sign_to_pm }}</td>
                     <td>
                       
                     </td>

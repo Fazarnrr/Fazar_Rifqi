@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CreateWeekly;
 use App\Models\Upload;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return view('task');
+        $data = CreateWeekly::all();
+        return view('task', compact('data'));
     }
 
     /**

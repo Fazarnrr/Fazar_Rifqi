@@ -129,7 +129,7 @@
         </div>
       </li>
 
-      <div class="d-sm-none d-lg-inline-block" style="color: black; margin-right:0.6em">Management</div></a>
+      <div class="d-sm-none d-lg-inline-block" style="color: black; margin-right:0.6em">Project Management</div></a>
 
       <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
         <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">

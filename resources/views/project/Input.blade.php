@@ -1,78 +1,46 @@
 @extends('layouts.main')
 @section('content')
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <section class="section">
+     <div class="title">
+        <h1 style="color: black; margin-left: 10px; margin-top:10px">Create Project Timeline</h1>
+     </div> 
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-  </head>
-  <body>
-  
-
-    <div class="card">
-        <div class="card-body">
-        <h3 class="font-weight-bold">Project Timeline</h3>
-        </div>
-        <div class="card-body">
-        <form action="{{route ('simpan-data')}}" method="POST" enctype="multipart/form-data">   
-            {{csrf_field()}}
-            <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Nama institusi</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="nama_institusi">
-
-  <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Nama project</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="nama_project">
-</div>
-
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Nama sales</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="nama_sales">
-</div>
-
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">start date</label>
-  <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="12-9-2022-12-1" name="start_date">
-</div>
-
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">finish date</label>
-  <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="12-9-2022-12-1" name="finish_date">
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">sign to Technical</label>
-  <select class="form-control" class="form-control" aria-label=".form-select-sm example" name="sign_to">
-  @foreach ($data as $id)
-  <option value="{{ $id->id }}">{{ $id->nama_institusi}}</option>
-  @endforeach
-</select>
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">sign to PM </label>
-  <select class="form-control" class="form-control" aria-label=".form-select-sm example" name="sign_to_pm">
-  @foreach ($data as $id)
-  <option value="{{ $id->id }}">{{ $id->nama_project}}</option>
-  @endforeach
-</select>
-</div>
+     <!-- Nama CLient -->
+     <form action="{{route ('simpan-data')}}" method="POST" enctype="multipart/form-data">
+      {{csrf_field()}}
 
 
-<button type="submit" class="btn btn-primary">Next</button>
+      <div class="col-sm-5">
+      <label for="nama_institusi" class="form-label" style="font-weight: bold; color:black">Nama Institusi</label>
+      <select name="nama_institusi" id="nama_institusi" class="form-control">
+      <option selected>Pilih Technikal</option>
+        <option value="fazar">Bank BCA</option>
+        <option value="rifqi">Bank CIMB</option>
+        <option value="arisz">BNI</option>
+      </select>
+      </div>
 
-</form> 
 
-        </div>
+      <div class="col-sm-6">
+      <label for="nama_project" class="form-label" style="font-weight: bold; color:black">Nama Project</label>
+      <input type="text" name="nama_project"  class="form-control" >
+      </div>
+      <div class="col-sm-6">
+      <label for="sign_to" class="form-label" style="font-weight: bold; color:black">Technikal</label>
+      <input type="text" name="sign_to"  class="form-control" >
+      </div>
+      <p></p>
+      <br>
+      <h2 style="color: black; margin-left: 10px; margin-top:10px">Timeline</h2>
+</br>
     </div>
-    <a href="{{url ('index')}}"><button type="submit" class="btn btn-danger btn-sm">Back</button></a> 
-    
+   
+<br>
 
+
+</br>
+
+     </form>
     
-  </body>
-</html>
+   
 @endsection

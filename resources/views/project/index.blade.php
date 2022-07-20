@@ -15,11 +15,11 @@
                 <th>No</th>
                 <th>Nama institusi</th>
                 <th>Nama Projek</th>
-                <th>Nama Sales</th>
                 <th>Start Date</th>
                 <th>Finish Date</th>
                 <th>Sign to Technical</th>
-                <th>Sign to PM</th>
+                <th>action</th>
+                
                 
             </tr>
          </thead>
@@ -30,14 +30,15 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $id->nama_institusi }}</td>
                     <td>{{ $id->nama_project }}</td>
-                    <td>{{ $id->nama_sales }}</td>
                     <td>{{$id->start_date}}</td>  
                     <td>{{$id->finish_date}}</td> 
                     <td>{{ $id->sign_to }}</td>
-                    <td>{{ $id->sign_to_pm }}</td>
+                    
                     <td>
-                      
+                    <a href="{{url ('detail', $id->id)}}">  <button type="submit" class="btn btn-warning btn-sm mb-1">Detail</button></a>
+                    <a href="{{url ('delete', $id->id)}}">  <button type="submit" class="btn btn-danger btn-sm mb-1">Edit</button></a> 
                     </td>
+                    
                 
                 </tr>
             @endforeach

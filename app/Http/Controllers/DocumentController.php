@@ -41,13 +41,13 @@ class DocumentController extends Controller
 
 
        Upload::create([
-        "no_dokumen" =>  $request->no_dokumen,
-        "tgl_upload" =>  $request->tgl_upload,
-        "nama_institusi" => $request->nama_institusi,
+        "nama_client" => $request->nama_client,
         "nama_project" => $request->nama_project,
+        "hps"=> $request->hps,
+        "nama_sales" =>$request->nama_sales,
         "jenis_dokumen" => $request->jenis_dokumen,
-        "upload_dokumen" =>  $request->upload = $upload_dokumen,
-    
+        "upload_dokumen" => $request-> upload_dokumen,
+        "sign_tec" => $request-> sign_tec
         ]);
 
             return redirect('document');

@@ -1,19 +1,34 @@
 @extends('layouts.main')
 @section('content')
 <table class="table">
-<h1 style="color: black; margin-left: 10px; margin-top:10px">List View Work Order</h1>
+<h1 style="color: black; margin-left: 10px; margin-top:10px">Task Progress Report</h1>
+<a href="{{route ('exporttask')}}" class="btn btn-primary"><i class="fas fa-file-excel"></i> Export Excel</a>
   <thead>
     <tr>
-      <th scope="col">No Work Order</th>
-      <th scope="col">Tanggal WO</th>
-      <th scope="col">Nama Institusi</th>
-      <th scope="col">Nilai Project</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Nama Sales</th>
-      <th scope="col">HPS</th>
+                <th>Nama</th>
+                <th>Nama Project</th>
+                <th>Nilai Project </th>
+                <th>Nama Am</th>
+                <th>Nama Pm</th>
+                <th>Nama Tecnikal</th>
+                <th>Status Pekerjaan</th>
     </tr>
   </thead>
   <tbody>
+
+ @foreach($cb as $t)
+<tr>
+<td>{{$t->name}}</td>
+<td>{{$t->name_pro}}</td>
+<td>{{$t->nilai_pro}}</td>
+<td>{{$t->name_am}}</td>
+<td>{{$t->name_pm}}</td>
+<td>{{$t->name_tec}}</td>
+<td>{{$t->status}}</td>
+</tr>
+@endforeach
+
   </tbody>
+
 </table>
 @endsection

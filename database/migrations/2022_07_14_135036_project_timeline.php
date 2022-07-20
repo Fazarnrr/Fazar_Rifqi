@@ -17,11 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string("nama_institusi");
             $table->string("nama_project");
-            $table->string("nama_sales");
             $table->string("start_date");
             $table->string("finish_date");
             $table->string("sign_to");
-            $table->string("sign_to_pm");
             $table->timestamps();
         });
     }

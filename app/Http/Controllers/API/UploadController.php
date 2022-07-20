@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Upload;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class UploadController extends Controller
 {
@@ -24,12 +25,14 @@ class UploadController extends Controller
     {
         try {
         $validate = Validator::make($request->all(), [
-                "no_dokumen" => "required|unique:uploads",
-                "tgl_upload" => "required",
-                "nama_institusi" => "required",
-                "nama_project" => "required",
+                "nama_client" => "required",
+                "mama_project" => "required",
+                "hps" => "required",
+                "nama_sales" => "required",
                 "jenis_dokumen" => "required",
                 "upload_dokumen" => "required|file",
+                "sign_tec" => "required"
+
             ]);
 
             if ($validate->fails()){
@@ -42,13 +45,17 @@ class UploadController extends Controller
 
 
            Upload::create([
-            "no_dokumen" =>  $request->no_dokumen,
-            "tgl_upload" =>  $request->tgl_upload,
-            "nama_institusi" => $request->nama_institusi,
-            "nama_project" => $request->nama_project,
+
+            "nama_client" => $request->nama_client,
+            "mama_project" => $request->nama_project,
+            "hps" => $request->hps,
+            "nama_sales" => $request->nama_sales,
             "jenis_dokumen" => $request->jenis_dokumen,
-            "upload_dokumen" =>  $request->upload = $upload_dokumen,
-        
+            "upload_dokumen" => $request->upload = $upload_dokumen,
+            "sign_tec" => $request->sign_tec
+
+
+
             ]);
 
             return response()->json([
@@ -71,12 +78,14 @@ class UploadController extends Controller
         $data = Upload::findOrFail($id);
         try {
             $validate = Validator::make($request->all(), [
-                "no_dokumen" => "required|unique:uploads",
-                "tgl_upload" => "required",
-                "nama_institusi" => "required",
-                "nama_project" => "required",
+                "nama_client" => "required",
+                "mama_project" => "required",
+                "hps" => "required",
+                "nama_sales" => "required",
                 "jenis_dokumen" => "required",
                 "upload_dokumen" => "required|file",
+                "sign_tec" => "required"
+
             ]);
 
             if ($validate->fails()){
@@ -87,12 +96,15 @@ class UploadController extends Controller
                $data->move(public_path().'/upload_dokumen', $upload_dokumen);
 
             $data->update([
-                "no_dokumen" =>$request->no_dokumen,
-                "tgl_upload" =>$request->tgl_upload,
-                "nama_institusi" =>$request->nama_institusi,
-                "nama_project" =>$request->nama_project,
-                "jenis_dokumen" =>$request->jenis_dokumen,
-                "upload_dokumen" =>$request->upload = $upload_dokumen,
+                "nama_client" => $request->nama_client,
+                "mama_project" => $request->nama_project,
+                "hps" => $request->hps,
+                "nama_sales" => $request->nama_sales,
+                "jenis_dokumen" => $request->jenis_dokumen,
+                "upload_dokumen" => $request->upload = $upload_dokumen,
+                "sign_tec" => $request->sign_tec
+    
+    
             ]);
 
             return response()->json([

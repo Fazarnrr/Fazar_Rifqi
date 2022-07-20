@@ -10,11 +10,12 @@ class Upload extends Model
     use HasFactory;
 
     protected $fillable =[
-        "no_dokumen",
-        "tgl_upload",
-        "nama_institusi",
+        "nama_client",
         "nama_project",
+        "hps",
+        "nama_sales",
         "jenis_dokumen",
-        "upload_dokumen"
+        "upload_dokumen",
+        "sign_tec"
     ];
 }

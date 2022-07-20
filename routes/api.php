@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\API\UploadController;
+use App\Http\Controllers\API\NotifController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,11 @@ Route::apiResource('upload','\App\Http\Controllers\API\UploadController',[
 Route::apiResource('ProjectTimeline','\App\Http\Controllers\API\ProjectTimelineController',[
     "only" => ["index", "store", "edit", "update", "destroy"]    
 ]);
+
+Route::post('/notif/getall')->name('notif.getall');
+Route::post('/notif/getroles')->name('notif.getroles');
+Route::post('/notif/pushnotif')->name('notif.pushnotif');
+Route::post('/delete', [NotifController::class, 'delete'])->name('notif.delete');
 
 Route::post('upload/{id}',[UploadController::class,'update'])->name('uploads.update');
 

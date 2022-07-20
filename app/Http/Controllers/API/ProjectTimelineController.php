@@ -46,33 +46,31 @@ class ProjectTimelineController extends Controller
             $validate = Validator::make($request->all(), [
                 "nama_institusi" => "required",
                 "nama_project" => "required",
-                "nama_sales" => "required",
                 "start_date" => "required",
                 "finish_date" => "required",
                 "sign_to" => "required",
-                "sign_to_pm" => "required"
+               
             ],[
                 "nama_institusi.required" => "Field tidak boleh kosong",
                 "nama_project.required" => "Field tidak boleh kosong",
-                "nama_sales.required" => "Field tidak boleh kosong",
                 "start_date.required" => "Field tidak boleh kosong",
                 "finish_date.required" => "Field tidak boleh kosong",
                 "sign_to.required" => "Field tidak boleh kosong",
-                "sign_to_pm.required" => "Field tidak boleh kosong"
+               
             ]);
     
             if($validate->fails()) {
-                return response()->json($validate->errors());
+                return redirect()->route('input')
+                ->with('error','Field Tidak Boleh kosong');
             }
     
             ProjectTimeline::create([
                 "nama_institusi" => $request->nama_institusi,
                 "nama_project" => $request->nama_project,
-                "nama_sales" => $request->nama_sales,
                 "start_date" => $request->start_date,
                 "finish_date" => $request->finish_date,
                 "sign_to" => $request->sign_to,
-                "sign_to_pm" => $request->sign_to_pm
+               
             ]);
     
             return response()->json([
@@ -95,6 +93,13 @@ class ProjectTimelineController extends Controller
        "data" => $id
 
         ]);
+    }
+
+
+    public function show($id)
+    {
+        $detail = ProjectTimeline::all()->find($id);
+        return view('project.detail', compact('detail'));
     }
 
     /**

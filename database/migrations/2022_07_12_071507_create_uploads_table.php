@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('uploads', function (Blueprint $table) {
             $table->id();
-            $table->string("no_dokumen");
-            $table->string("tgl_upload");
-            $table->string("nama_institusi");
+            $table->string("nama_client");
             $table->string("nama_project");
+            $table->integer("hps");
+            $table->string("nama_sales");
             $table->string("jenis_dokumen");
             $table->string("upload_dokumen");
+            $table->string("sign_tec");
             $table->timestamps();
         });
     }

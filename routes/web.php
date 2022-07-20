@@ -3,7 +3,6 @@
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DocumentController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\InputController;
 use App\Http\Controllers\TaskController;
@@ -30,7 +29,7 @@ Route::get('/dashboard',[DashboardController::class,'index'])->name('dasboard');
 
 //route simpan dokumen
 Route::get('/document',[DocumentController::class,'index'])->name('document');
-Route::post('/simpan-data',[DocumentController::class,'store'])->name('simpan-data');
+Route::post('/simpan-dok',[DocumentController::class,'store'])->name('simpan-dok');
 
 //route simpan priject time line
 Route::get('/input',[InputController::class,'index'])->name('input');
@@ -43,5 +42,4 @@ Route::get('/task',[TaskController::class,'index'])->name('task');
 //list
 Route::get('/list',[ListController::class,'index'])->name('list');
 
-Route::get('/home',[HomeController::class,'home'])->name('home');
 
